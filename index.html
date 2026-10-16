@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Expedición Austral | Expediciones privadas en la Patagonia</title>
+  <meta name="description" content="Expediciones privadas por la Patagonia para un solo grupo a la vez, guiadas por quienes nacieron aquí.">
+  <meta name="theme-color" content="#0A1422">
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/brand/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <link rel="preload" href="fonts/newsreader-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/img/hero/massif-blue.webp" as="image" type="image/webp">
+  <link rel="preload" href="assets/img/hero/sky.webp" as="image" type="image/webp">
+  <script>
+    // Motion gate: set before first paint so animated elements never flash.
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      var q = new URLSearchParams(location.search);
+      if (q.has('reduced') || matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('reduced');
+      else d.classList.add('motion');
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+
+  <header class="nav" data-nav>
+    <a class="nav__brand" href="#top" aria-label="Expedición Austral, volver al inicio">
+      <svg class="nav__mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#crux"/></svg>
+      <span class="nav__word">Expedición Austral</span>
+    </a>
+    <nav class="nav__links" aria-label="Principal">
+      <a href="#route">La ruta</a>
+      <a href="#expeditions">Expediciones</a>
+      <a href="#guests">Huéspedes</a>
+    </nav>
+    <a class="btn btn--ghost nav__cta" href="#plan">Planifica tu expedición</a>
+  </header>
+
+  <main id="main">
+    <!-- HERO: nine depth layers; the headline lives between the massif and the fog -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__stage" data-hero>
+        <div class="layer layer--sky" data-depth="sky"><img src="assets/img/hero/sky.webp" alt="" width="2560" height="1440" fetchpriority="high"></div>
+        <div class="layer layer--clouds" data-depth="clouds"><img src="assets/img/hero/clouds.webp" alt="" width="2560" height="1440"></div>
+        <div class="layer layer--far" data-depth="far"><img src="assets/img/hero/far.webp" alt="" width="2560" height="1440"></div>
+        <div class="layer layer--massif" data-depth="massif">
+          <img src="assets/img/hero/massif-blue.webp" alt="" width="2560" height="1440" fetchpriority="high">
+          <img class="massif__glow" src="assets/img/hero/massif.webp" alt="" width="2560" height="1440" data-glow>
+        </div>
+        <h1 class="hero__title" id="hero-title" data-hero-title>
+          <span class="hero__line">El silencio</span>
+          <span class="hero__line">del fin del mundo</span>
+        </h1>
+        <div class="layer layer--fog-back" data-depth="fogBack"><img src="assets/img/hero/fog-back.webp" alt="" width="2560" height="1440"></div>
+        <div class="layer layer--ridge" data-depth="ridge"><img src="assets/img/hero/ridge.webp" alt="" width="2560" height="1440"></div>
+        <div class="layer layer--fog-front" data-depth="fogFront"><img src="assets/img/hero/fog-front.webp" alt="" width="2560" height="1440"></div>
+        <img class="rock rock--left" data-depth="rockL" src="assets/img/hero/rock-left.webp" alt="" width="1400" height="900">
+        <img class="rock rock--right" data-depth="rockR" src="assets/img/hero/rock-right.webp" alt="" width="1100" height="760">
+        <div class="hero__veil" data-veil aria-hidden="true"></div>
+
+        <div class="hero__intro" data-hero-intro>
+          <p class="hero__lede">Expediciones privadas por la Patagonia para un solo grupo a la vez, guiadas por quienes nacieron aquí.</p>
+          <div class="hero__actions">
+            <a class="btn btn--solid" href="#plan">Planifica tu expedición</a>
+            <a class="btn btn--text" href="#route">Ver la ruta</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MANIFESTO: words clear out of the fog as you scroll -->
+    <section class="manifesto" id="manifesto" aria-labelledby="manifesto-title">
+      <canvas class="manifesto__snow" data-snow aria-hidden="true"></canvas>
+      <div class="manifesto__pin" data-manifesto>
+        <h2 class="visually-hidden" id="manifesto-title">Por qué viajamos así</h2>
+        <p class="manifesto__text" data-fogwords>La Patagonia no actúa para nadie. El viento decide el día, la luz llega tarde y se va sin avisar, y las montañas guardan sus secretos. No intentamos domar nada de eso. Armamos cada expedición en torno a un solo grupo, una sola temporada y la paciencia de esperar a que se despeje la cumbre.</p>
+        <p class="manifesto__sign" data-sign>Inés Arrieta, fundadora y guía principal</p>
+      </div>
+    </section>
+
+    <!-- ROUTE: pinned horizontal traverse with a route line drawn by progress -->
+    <section class="route" id="route" aria-labelledby="route-title">
+      <div class="route__pin" data-route>
+        <div class="route__track" data-track>
+          <header class="route__intro">
+            <h2 class="route__title" id="route-title" data-lines>Catorce días, de las torres de granito al final del mapa</h2>
+            <p class="route__note">Un itinerario de ejemplo. Cada expedición se diseña para su grupo, pero casi todas siguen la misma línea hacia el sur.</p>
+          </header>
+
+          <article class="stop" data-stop>
+            <figure class="stop__frame"><img class="stop__img" src="assets/img/route/chalten.webp" alt="Agujas de granito encendidas al amanecer sobre una laguna glaciar en calma" width="1800" height="1200" loading="lazy"></figure>
+            <div class="stop__meta">
+              <p class="stop__days">Días 1 a 3</p>
+              <h3 class="stop__name">El Chaltén</h3>
+              <p class="stop__text">Amanecer bajo las torres de granito y luego un refugio privado sobre la Laguna de los Tres.</p>
+              <p class="stop__coord">49°19′S 72°53′O</p>
+            </div>
+          </article>
+          <article class="stop stop--low" data-stop>
+            <figure class="stop__frame"><img class="stop__img" src="assets/img/route/icefield.webp" alt="Un frente de glaciar azul que se quiebra sobre agua oscura bajo nubes de tormenta" width="1800" height="1200" loading="lazy"></figure>
+            <div class="stop__meta">
+              <p class="stop__days">Días 4 a 6</p>
+              <h3 class="stop__name">Campo de Hielo Sur</h3>
+              <p class="stop__text">Tres días sobre el hielo, encordados, con dos guías de montaña y un cocinero que lleva veinte temporadas haciendo esto.</p>
+              <p class="stop__coord">49°30′S 73°30′O</p>
+            </div>
+          </article>
+          <article class="stop" data-stop>
+            <figure class="stop__frame"><img class="stop__img" src="assets/img/route/fjord.webp" alt="Una pequeña embarcación con la cabina iluminada entre paredes de fiordo cubiertas de bosque" width="1800" height="1200" loading="lazy"></figure>
+            <div class="stop__meta">
+              <p class="stop__days">Días 7 a 9</p>
+              <h3 class="stop__name">Última Esperanza</h3>
+              <p class="stop__text">Una embarcación privada por los fiordos, fondeando donde los glaciares se encuentran con el mar.</p>
+              <p class="stop__coord">51°43′S 72°30′O</p>
+            </div>
+          </article>
+          <article class="stop stop--low" data-stop>
+            <figure class="stop__frame"><img class="stop__img" src="assets/img/route/steppe.webp" alt="Estepa dorada bajo nubes lenticulares con una estancia solitaria" width="1800" height="1200" loading="lazy"></figure>
+            <div class="stop__meta">
+              <p class="stop__days">Días 10 y 11</p>
+              <h3 class="stop__name">La estepa</h3>
+              <p class="stop__text">Una estancia en campo abierto. Caballos, cordero al fuego y un cielo que parece no terminar nunca.</p>
+              <p class="stop__coord">50°20′S 71°30′O</p>
+            </div>
+          </article>
+          <article class="stop" data-stop>
+            <figure class="stop__frame"><img class="stop__img" src="assets/img/route/hornos.webp" alt="Un faro sobre un promontorio oscuro frente a un mar agitado" width="1800" height="1200" loading="lazy"></figure>
+            <div class="stop__meta">
+              <p class="stop__days">Días 12 a 14</p>
+              <h3 class="stop__name">Cabo de Hornos</h3>
+              <p class="stop__text">Por mar hasta el último faro, si el tiempo lo permite. A menudo no lo permite, y eso también es parte del viaje.</p>
+              <p class="stop__coord">55°58′S 67°16′O</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="route__map" aria-hidden="true">
+          <svg class="route__svg" viewBox="0 0 1000 40" preserveAspectRatio="none">
+            <path class="route__base" d="M10 24 C120 8 200 34 300 20 S470 6 560 22 S760 36 860 18 S960 14 990 22"/>
+            <path class="route__drawn" data-route-line d="M10 24 C120 8 200 34 300 20 S470 6 560 22 S760 36 860 18 S960 14 990 22"/>
+          </svg>
+          <ol class="route__marks">
+            <li style="--x:10%">El Chaltén</li>
+            <li style="--x:30%">Campo de Hielo</li>
+            <li style="--x:50%">Fiordos</li>
+            <li style="--x:70%">Estepa</li>
+            <li style="--x:90%">Cabo de Hornos</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPEDITIONS: sticky lens-opening media with overlapping cards -->
+    <section class="expeditions" id="expeditions" aria-labelledby="exp-title">
+      <header class="expeditions__head">
+        <h2 class="section-title" id="exp-title" data-lines>Tres maneras de llegar</h2>
+        <p class="section-lede">Nuestros viajes más pedidos. Cada uno funciona por sí solo o como parte de la ruta completa.</p>
+      </header>
+
+      <article class="exp" data-exp>
+        <div class="exp__media" data-exp-media>
+          <img src="assets/img/expeditions/traverse.webp" alt="Una cordada cruzando un inmenso campo de nieve bajo un pico lejano" width="2000" height="1250" loading="lazy">
+        </div>
+        <div class="exp__card">
+          <p class="exp__meta">Nueve días. De noviembre a marzo.</p>
+          <h3 class="exp__name">Travesía del Campo de Hielo</h3>
+          <p class="exp__text">Cruza el Campo de Hielo Patagónico Sur en esquís, durmiendo en domos calefaccionados y avanzando solo cuando el tiempo lo permite.</p>
+          <p class="exp__price">Desde USD 24.500 por persona</p>
+        </div>
+      </article>
+
+      <article class="exp exp--right" data-exp>
+        <div class="exp__media" data-exp-media>
+          <img src="assets/img/expeditions/estancia.webp" alt="Un refugio con ventanas cálidas bajo la Vía Láctea y un bosque oscuro" width="2000" height="1250" loading="lazy">
+        </div>
+        <div class="exp__card">
+          <p class="exp__meta">Cinco días. Todo el año.</p>
+          <h3 class="exp__name">Noches de estancia</h3>
+          <p class="exp__text">Seis habitaciones y ningún vecino en cuarenta kilómetros. Cabalgatas de día, cena junto al fuego y el cielo austral por la noche.</p>
+          <p class="exp__price">Desde USD 9.800 por persona</p>
+        </div>
+      </article>
+
+      <article class="exp" data-exp>
+        <div class="exp__media" data-exp-media>
+          <img src="assets/img/expeditions/icecave.webp" alt="Una persona de pie en la boca luminosa de una cueva de hielo azul" width="2000" height="1250" loading="lazy">
+        </div>
+        <div class="exp__card">
+          <p class="exp__meta">Cuatro días. De junio a septiembre.</p>
+          <h3 class="exp__name">Las horas azules</h3>
+          <p class="exp__text">Descensos guiados a cuevas de hielo estacionales, en el momento en que las paredes toman el color del agua profunda.</p>
+          <p class="exp__price">Desde USD 11.200 por persona</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- TESTIMONIAL: video loop behind, quote lines unmask -->
+    <section class="voices" id="guests" aria-labelledby="voices-title">
+      <div class="voices__media" data-voices-media aria-hidden="true">
+        <video class="voices__video" muted loop playsinline preload="none" poster="assets/video/summit-cloud-poster.webp" data-video>
+          <source src="assets/video/summit-cloud.webm" type="video/webm">
+          <source src="assets/video/summit-cloud.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="voices__inner">
+        <h2 class="visually-hidden" id="voices-title">Lo que dicen nuestros huéspedes</h2>
+        <figure class="voices__figure">
+          <blockquote class="voices__quote">
+            <p data-lines>“Esperamos tres días a que se despejara la cumbre. Nadie nos apuró. Cuando por fin se despejó, Inés ya tenía el café listo.”</p>
+          </blockquote>
+          <figcaption class="voices__cite">Ruth y Tomás Albareda<span>Barcelona, huéspedes en marzo de 2026</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- BOOKING: alpenglow rises behind the ridge as the form arrives -->
+    <section class="plan" id="plan" aria-labelledby="plan-title">
+      <div class="plan__glow" data-glow-rise aria-hidden="true"></div>
+      <img class="plan__ridge" src="assets/img/hero/ridge.webp" alt="" width="2560" height="1440" loading="lazy" aria-hidden="true">
+      <div class="plan__inner">
+        <div class="plan__copy">
+          <h2 class="section-title" id="plan-title" data-lines>Cuéntanos cuándo puedes viajar</h2>
+          <p class="section-lede">Recibimos once grupos por temporada. Comparte tus fechas y en dos días te respondemos con una primera ruta.</p>
+        </div>
+        <form class="form" novalidate data-form>
+          <div class="field">
+            <label for="f-name">Nombre</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-err">
+            <p class="field__error" id="f-name-err" hidden>Escribe tu nombre.</p>
+          </div>
+          <div class="field">
+            <label for="f-email">Correo electrónico</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-err">
+            <p class="field__error" id="f-email-err" hidden>Escribe un correo para que podamos responderte.</p>
+          </div>
+          <div class="field">
+            <label for="f-season">Temporada</label>
+            <select id="f-season" name="season">
+              <option>Primavera, octubre a noviembre</option>
+              <option>Verano, diciembre a febrero</option>
+              <option>Otoño, marzo a abril</option>
+              <option>Invierno, junio a septiembre</option>
+              <option>Todavía no lo sé</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-party">Tamaño del grupo</label>
+            <select id="f-party" name="party">
+              <option>1 o 2 personas</option>
+              <option>3 o 4 personas</option>
+              <option>5 o 6 personas</option>
+              <option>7 personas o más</option>
+            </select>
+          </div>
+          <div class="field field--wide">
+            <label for="f-note">¿Qué haría que este viaje fuera tuyo? <span class="field__opt">Opcional</span></label>
+            <textarea id="f-note" name="note" rows="3"></textarea>
+          </div>
+          <div class="form__foot">
+            <button class="btn btn--solid" type="submit">Planifica tu expedición</button>
+            <p class="form__status" role="status" aria-live="polite" data-status></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" aria-labelledby="footer-title">
+    <div class="footer__inner">
+      <h2 class="footer__word" id="footer-title" data-footer-word><span>Expedición</span> <span>Austral</span></h2>
+      <div class="footer__cols">
+        <div>
+          <p class="footer__label">Campamento base</p>
+          <p>Av. San Martín 412<br>El Chaltén, Santa Cruz<br>Argentina</p>
+        </div>
+        <div>
+          <p class="footer__label">Temporada</p>
+          <p>Hay expediciones todo el año.<br>La oficina tiene horario patagónico.</p>
+        </div>
+        <div>
+          <p class="footer__label">En esta página</p>
+          <p><a href="#route">La ruta</a><br><a href="#expeditions">Expediciones</a><br><a href="#plan">Planifica tu expedición</a></p>
+        </div>
+      </div>
+      <p class="footer__fine">© 2026 Expedición Austral. Marca ficticia creada como estudio de diseño. Todas las imágenes se generaron de forma procedural.</p>
+    </div>
+  </footer>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="crux" viewBox="0 0 64 64"><path d="M6 54.5 Q32 47 58 54.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M33.70,3.88 Q34.06,7.49 34.74,8.96 Q36.21,9.64 39.82,10.00 Q36.21,10.36 34.74,11.04 Q34.06,12.51 33.70,16.12 Q33.34,12.51 32.66,11.04 Q31.19,10.36 27.58,10.00 Q31.19,9.64 32.66,8.96 Q33.34,7.49 33.70,3.88Z" fill="currentColor"/><path d="M32.00,36.80 Q32.43,41.05 33.22,42.78 Q34.95,43.57 39.20,44.00 Q34.95,44.43 33.22,45.22 Q32.43,46.95 32.00,51.20 Q31.57,46.95 30.78,45.22 Q29.05,44.43 24.80,44.00 Q29.05,43.57 30.78,42.78 Q31.57,41.05 32.00,36.80Z" fill="currentColor"/><path d="M19.76,19.53 Q20.15,23.44 20.88,25.03 Q22.47,25.76 26.38,26.15 Q22.47,26.54 20.88,27.27 Q20.15,28.86 19.76,32.77 Q19.37,28.86 18.64,27.27 Q17.05,26.54 13.14,26.15 Q17.05,25.76 18.64,25.03 Q19.37,23.44 19.76,19.53Z" fill="currentColor"/><path d="M42.54,17.78 Q42.81,20.41 43.30,21.48 Q44.37,21.97 47.00,22.24 Q44.37,22.51 43.30,23.00 Q42.81,24.07 42.54,26.70 Q42.27,24.07 41.78,23.00 Q40.71,22.51 38.08,22.24 Q40.71,21.97 41.78,21.48 Q42.27,20.41 42.54,17.78Z" fill="currentColor"/><path d="M38.12,31.12 Q38.30,32.90 38.63,33.63 Q39.36,33.96 41.14,34.14 Q39.36,34.32 38.63,34.65 Q38.30,35.38 38.12,37.16 Q37.94,35.38 37.61,34.65 Q36.88,34.32 35.10,34.14 Q36.88,33.96 37.61,33.63 Q37.94,32.90 38.12,31.12Z" fill="currentColor"/></symbol>
+  </svg>
+
+  <script src="vendor/gsap.min.js" defer></script>
+  <script src="vendor/ScrollTrigger.min.js" defer></script>
+  <script src="vendor/SplitText.min.js" defer></script>
+  <script src="vendor/lenis.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
